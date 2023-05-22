@@ -50,11 +50,11 @@ public class MeetingService {
         }
 
         if (fromDate != null) {
-            meetingStream = meetingStream.filter(meeting -> meeting.getStartDate().compareTo(fromDate) >= 0);
+            meetingStream = meetingStream.filter(meeting -> !meeting.getStartDate().isBefore(fromDate));
         }
 
         if (toDate != null) {
-            meetingStream = meetingStream.filter(meeting -> meeting.getEndDate().compareTo(toDate) <= 0);
+            meetingStream = meetingStream.filter(meeting -> !meeting.getEndDate().isAfter(toDate));
         }
 
         if (minAttendees != null) {

@@ -29,6 +29,7 @@ public class Meeting {
     public Meeting() {
         this.attendees = new HashMap<>();
     }
+
     public String getId() {
         return id;
     }
