@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import java.time.LocalDate;
+import java.util.Map;
 
 @Entity
 public class Meeting {
@@ -13,8 +14,9 @@ public class Meeting {
     private Type type;
     private LocalDate startDate;
     private LocalDate endDate;
+    private Map<LocalDate, String> attendees;
 
-    public Meeting(String name, String responsiblePerson, String description, Category category, Type type, LocalDate startDate, LocalDate endDate) {
+    public Meeting(String name, String responsiblePerson, String description, Category category, Type type, LocalDate startDate, LocalDate endDate, Map<LocalDate, String> attendees) {
         this.name = name;
         this.responsiblePerson = responsiblePerson;
         this.description = description;
@@ -22,10 +24,19 @@ public class Meeting {
         this.type = type;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.attendees = attendees;
     }
 
     public String getName() {
         return name;
+    }
+
+    public Map<LocalDate, String> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(Map<LocalDate, String> attendees) {
+        this.attendees = attendees;
     }
 
     public void setName(String name) {
