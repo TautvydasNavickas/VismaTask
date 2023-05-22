@@ -1,56 +1,51 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
 public class Meeting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Name;
-    private String ResponsiblePerson;
-    private String Description;
+
+    private String name;
+    private String responsiblePerson;
+    private String description;
     private Category category;
     private Type type;
-    private LocalDate StartDate;
-    private LocalDate EndDate;
-
+    private LocalDate startDate;
+    private LocalDate endDate;
 
     public Meeting(String name, String responsiblePerson, String description, Category category, Type type, LocalDate startDate, LocalDate endDate) {
-        Name = name;
-        ResponsiblePerson = responsiblePerson;
-        Description = description;
+        this.name = name;
+        this.responsiblePerson = responsiblePerson;
+        this.description = description;
         this.category = category;
         this.type = type;
-        StartDate = startDate;
-        EndDate = endDate;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getResponsiblePerson() {
-        return ResponsiblePerson;
+        return responsiblePerson;
     }
 
     public void setResponsiblePerson(String responsiblePerson) {
-        ResponsiblePerson = responsiblePerson;
+        this.responsiblePerson = responsiblePerson;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public Category getCategory() {
@@ -70,18 +65,18 @@ public class Meeting {
     }
 
     public LocalDate getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
     public void setStartDate(LocalDate startDate) {
-        StartDate = startDate;
+        this.startDate = startDate;
     }
 
     public LocalDate getEndDate() {
-        return EndDate;
+        return endDate;
     }
 
     public void setEndDate(LocalDate endDate) {
-        EndDate = endDate;
+        this.endDate = endDate;
     }
 }
