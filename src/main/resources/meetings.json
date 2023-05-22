@@ -1,0 +1,25 @@
+[ {
+  "id" : "b78ab2e4-4290-4835-b18c-9be538db51c1",
+  "name" : "Meeting 1",
+  "responsiblePerson" : "John Doe",
+  "description" : "Discuss project updates",
+  "category" : "CodeMonkey",
+  "type" : "Live",
+  "startDate" : [ 2023, 5, 23 ],
+  "endDate" : [ 2023, 5, 23 ],
+  "attendees" : {
+    "asdasd" : [ 2023, 5, 23 ]
+  }
+}, {
+  "id" : "a4119cce-3d15-4492-a0c4-dff33cf4fce5",
+  "name" : "Tautvydas",
+  "responsiblePerson" : "John Doe",
+  "description" : "PUFF",
+  "category" : "CodeMonkey",
+  "type" : "InPerson",
+  "startDate" : [ 2023, 5, 24 ],
+  "endDate" : [ 2023, 5, 24 ],
+  "attendees" : {
+    "John Doe" : [ 2023, 5, 23 ]
+  }
+} ]

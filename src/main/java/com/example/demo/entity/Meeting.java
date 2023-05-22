@@ -2,11 +2,12 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 @Entity
 public class Meeting {
-
+    private String id;
     private String name;
     private String responsiblePerson;
     private String description;
@@ -14,16 +15,33 @@ public class Meeting {
     private Type type;
     private LocalDate startDate;
     private LocalDate endDate;
-    private Map<LocalDate, String> attendees;
+    private Map<String, LocalDate> attendees;
 
-    public Meeting(String name, String responsiblePerson, String description, Category category, Type type, LocalDate startDate, LocalDate endDate, Map<LocalDate, String> attendees) {
-        this.name = name;
-        this.responsiblePerson = responsiblePerson;
+    public Meeting(String id, String description, String responsiblePerson, LocalDate startDate, LocalDate endDate, Map<String, LocalDate> attendees) {
+        this.id = id;
         this.description = description;
-        this.category = category;
-        this.type = type;
+        this.responsiblePerson = responsiblePerson;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.attendees = attendees;
+    }
+
+    public Meeting() {
+        this.attendees = new HashMap<>();
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Map<String, LocalDate> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(Map<String, LocalDate> attendees) {
         this.attendees = attendees;
     }
 
@@ -31,13 +49,6 @@ public class Meeting {
         return name;
     }
 
-    public Map<LocalDate, String> getAttendees() {
-        return attendees;
-    }
-
-    public void setAttendees(Map<LocalDate, String> attendees) {
-        this.attendees = attendees;
-    }
 
     public void setName(String name) {
         this.name = name;
